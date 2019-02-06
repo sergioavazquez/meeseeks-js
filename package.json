@@ -1,7 +1,7 @@
 {
   "name": "meeseeks-js",
-  "version": "0.0.2",
-  "description": "Handy nodejs helper functions. ",
+  "version": "0.0.3",
+  "description": "Simple helper methods for javaScript projects.",
   "main": "lib/meeseeks.js",
   "scripts": {
     "build": "webpack --mode production --config ./config/webpack.config.js",
@@ -18,7 +18,9 @@
   "files": [
     "/lib"
   ],
-  "author": "sergioavazquez@gmail.com",
+  "author": {
+    "name": "Sergio Vazquez"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sergioavazquez/meeseeks-js/issues"
@@ -47,5 +49,6 @@
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.1.14",
     "webpack-node-externals": "^1.7.2"
-  }
+  },
+  "keywords":["utils", "helper functions", "to", "chain", "mock promise", "store"]
 }
