@@ -5,8 +5,9 @@
   "main": "lib/meeseeks.js",
   "scripts": {
     "build": "webpack --mode production --config ./config/webpack.config.js",
-    "test": "jest --no-cache --coverage",
-    "test_dev": "node --inspect-brk=0.0.0.0 node_modules/.bin/jest --detectOpenHandles",
+    "test:unit": "jest unit --no-cache --coverage",
+    "test:int": "jest int --no-cache",
+    "test:dev": "node --inspect-brk=0.0.0.0 node_modules/.bin/jest --detectOpenHandles",
     "lint": "eslint ./src --fix"
   },
   "repository": {
@@ -33,15 +34,15 @@
     "eslint": "^5.12.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.0.0",
-    "eslint-loader": "^2.1.1",
+    "eslint-loader": "^2.1.2",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jest": "^22.2.1",
     "eslint-plugin-prettier": "^3.0.1",
-    "jest": "^24.0.0",
+    "jest": "^24.1.0",
     "prettier": "^1.16.2",
     "prettier-loader": "^2.1.1",
-    "webpack": "^4.29.0",
-    "webpack-cli": "^3.2.1",
+    "webpack": "^4.29.2",
+    "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.1.14",
     "webpack-node-externals": "^1.7.2"
   }

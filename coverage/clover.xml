@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1549289540286" clover="3.2.0">
-  <project timestamp="1549289540286" name="All files">
+<coverage generated="1549466829789" clover="3.2.0">
+  <project timestamp="1549466829790" name="All files">
     <metrics statements="32" coveredstatements="32" conditionals="15" coveredconditionals="15" methods="17" coveredmethods="17" elements="64" coveredelements="64" complexity="0" loc="32" ncloc="32" packages="1" files="4" classes="4"/>
     <file name="chain.js" path="/Users/sergiov/Documents/projects/sv/meeseeks-js/src/utils/chain.js">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
