@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack --mode production --config ./config/webpack.config.js",
     "test:unit": "jest unit --no-cache --coverage",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "test:int": "jest int --no-cache",
     "test:dev": "node --inspect-brk=0.0.0.0 node_modules/.bin/jest --detectOpenHandles",
     "lint": "eslint ./src --fix"
@@ -31,6 +32,7 @@
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^1.0.1",
+    "coveralls": "^3.0.2",
     "eslint": "^5.12.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.0.0",
