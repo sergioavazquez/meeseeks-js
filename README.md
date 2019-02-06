@@ -1,4 +1,8 @@
 # Meeseeks-js
+[![npm version](https://badge.fury.io/js/meeseeks-js.svg)](https://badge.fury.io/js/meeseeks-js)
+
+[![Coverage Status](https://coveralls.io/repos/github/sergioavazquez/meeseeks-js/badge.svg?branch=master)](https://coveralls.io/github/sergioavazquez/meeseeks-js?branch=master)
+
 
 Simple helper methods for `javaScript` projects.
 
@@ -125,10 +129,12 @@ It has three methods:
 ## Development
 
 `clone or fork repository`
-`npm install`
+```
+npm install
 
-`npm run test:unit` Runs unit tests and generates coverage report.
-`npm run test:int` Runs integration tests against built library.
-`npm run test:dev` Runs tests while allowing attaching an inspector for debugging.
-`npm run build` Compiles librabry.
-`npm run lint` Lints code.
+npm run test:unit // Runs unit tests and generates coverage report.
+npm run test:int // Runs integration tests against built library.
+npm run test:dev // Runs tests while allowing attaching an inspector for debugging.
+npm run build // Compiles librabry.
+npm run lint // Lints code.
+```
