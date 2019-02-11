@@ -1,6 +1,6 @@
 {
   "name": "meeseeks-js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple helper methods for javaScript projects.",
   "main": "lib/meeseeks.js",
   "scripts": {
@@ -50,5 +50,5 @@
     "webpack-dev-server": "^3.1.14",
     "webpack-node-externals": "^1.7.2"
   },
-  "keywords":["utils", "helper functions", "to", "chain", "mock promise", "store"]
+  "keywords":["utils", "helper functions", "to", "chain", "mock promise", "store", "watchdog", "debounce"]
 }
