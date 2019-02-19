@@ -2,6 +2,7 @@
 [![npm version](https://badge.fury.io/js/meeseeks-js.svg)](https://badge.fury.io/js/meeseeks-js)
 [![Build Status](https://travis-ci.com/sergioavazquez/meeseeks-js.svg?branch=master)](https://travis-ci.com/sergioavazquez/meeseeks-js)
 [![Coverage Status](https://coveralls.io/repos/github/sergioavazquez/meeseeks-js/badge.svg?branch=master)](https://coveralls.io/github/sergioavazquez/meeseeks-js?branch=master)
+![MIT](https://badgen.net/badge/license/MIT/blue)
 
 
 Simple helper methods for `javaScript` projects.

@@ -3,7 +3,7 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 
-module.exports = (env, argv) => {
+const serverSide = (env, argv) => {
   // console.log('webpack production config: ', env, argv);
   return{
     entry: ['./src/index.js'],
@@ -51,3 +51,5 @@ module.exports = (env, argv) => {
     ]
   }
 };
+
+module.exports = [ serverSide ]
