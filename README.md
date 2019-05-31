@@ -227,3 +227,5 @@ npm run test:dev // Runs tests while allowing attaching an inspector for debuggi
 npm run build // Compiles librabry.
 npm run lint // Lints code.
 ```
+
+Like the logo? Check out more cool design stuff by Gonzalo Cervantes [here!](https://dribbble.com/Cervantes)
