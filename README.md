@@ -7,6 +7,7 @@
 
 Simple helper methods for `javaScript` projects.
 
+![](meeseeks.png)
 
 ## Installation
 
