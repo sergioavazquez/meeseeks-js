@@ -1,13 +1,13 @@
 const webpack = require('webpack');
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 
 const serverSide = (env, argv) => {
   // console.log('webpack production config: ', env, argv);
-  return{
+  return {
     entry: ['./src/index.js'],
-    target: "node", // in order to ignore built-in modules like path, fs, etc.
+    target: 'node', // in order to ignore built-in modules like path, fs, etc.
     output: {
       filename: 'meeseeks.js',
       path: path.resolve(__dirname, '../lib'),
@@ -23,7 +23,7 @@ const serverSide = (env, argv) => {
           enforce: 'pre',
           loader: 'prettier-loader',
           options: {
-            parser: 'babel',
+            parser: 'babel'
           }
         },
         {
@@ -36,7 +36,7 @@ const serverSide = (env, argv) => {
           test: /\.js$/,
           exclude: /node_modules/,
           use: {
-            loader: "babel-loader"
+            loader: 'babel-loader'
           }
         }
       ]
@@ -45,11 +45,9 @@ const serverSide = (env, argv) => {
       new webpack.EnvironmentPlugin({
         NODE_ENV: 'production'
       }),
-      new CleanWebpackPlugin(['dist'], {
-        root: path.resolve(__dirname, '..'),
-      })
+      new CleanWebpackPlugin()
     ]
-  }
+  };
 };
 
-module.exports = [ serverSide ]
+module.exports = [serverSide];
