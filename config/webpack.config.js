@@ -1,11 +1,11 @@
 const webpack = require('webpack');
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 
 const serverSide = (env, argv) => {
   // console.log('webpack production config: ', env, argv);
-  return{
+  return {
     entry: ['./src/index.js'],
     target: "node", // in order to ignore built-in modules like path, fs, etc.
     output: {
@@ -45,11 +45,12 @@ const serverSide = (env, argv) => {
       new webpack.EnvironmentPlugin({
         NODE_ENV: 'production'
       }),
-      new CleanWebpackPlugin(['dist'], {
-        root: path.resolve(__dirname, '..'),
-      })
+      new CleanWebpackPlugin()
+      // new CleanWebpackPlugin(['dist'], {
+      //   root: path.resolve(__dirname, '..'),
+      // })
     ]
   }
 };
 
-module.exports = [ serverSide ]
+module.exports = [serverSide]
