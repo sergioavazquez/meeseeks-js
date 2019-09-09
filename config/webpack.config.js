@@ -46,8 +46,11 @@ const serverSide = (env, argv) => {
         NODE_ENV: 'production'
       }),
       new CleanWebpackPlugin()
+      // new CleanWebpackPlugin(['dist'], {
+      //   root: path.resolve(__dirname, '..'),
+      // })
     ]
   };
 };
 
-module.exports = [serverSide];
+module.exports = [serverSide]
