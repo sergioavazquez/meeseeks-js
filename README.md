@@ -5,7 +5,7 @@
 ![MIT](https://badgen.net/badge/license/MIT/blue)
 
 
-Simple helper methods for `javaScript` projects.
+Useful helper methods for `javaScript` projects.
 
 ![](meeseeks.png)
 
