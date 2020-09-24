@@ -1,6 +1,6 @@
 {
   "name": "meeseeks-js",
-  "version": "0.2.7",
+  "version": "0.2.9",
   "description": "Useful helper methods for javaScript projects.",
   "main": "lib/meeseeks.js",
   "scripts": {
@@ -29,26 +29,26 @@
   "bundleDependencies": false,
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.10.3",
-    "@babel/preset-env": "^7.10.3",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "coveralls": "^3.1.0",
-    "eslint": "^7.3.1",
+    "eslint": "^7.9.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-loader": "^4.0.2",
-    "eslint-plugin-import": "^2.21.2",
-    "eslint-plugin-jest": "^23.17.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^24.0.2",
     "eslint-plugin-prettier": "^3.1.4",
-    "jest": "^26.1.0",
-    "prettier": "^2.0.5",
+    "jest": "^26.4.2",
+    "prettier": "^2.1.2",
     "prettier-loader": "^3.3.0",
-    "webpack": "^4.43.0",
+    "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^2.5.2"
   },
   "keywords": [
     "utils",
