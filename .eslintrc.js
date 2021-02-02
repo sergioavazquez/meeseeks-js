@@ -9,7 +9,8 @@ module.exports = {
 	"rules": {
 		"no-console": "off",
 		"func-names": "off",
-		"no-underscore-dangle": "off",
+    "no-underscore-dangle": "off",
+    "import/prefer-default-export": "off",
 		"prettier/prettier": [
 			"error",
 			{ "singleQuote": true, "trailingComma": "es5" }
@@ -19,7 +20,7 @@ module.exports = {
 		"files": "**/*.test.js",
 		"rules": {
 			"node/no-unpublished-require": 0,
-			"node/no-missing-require": 0
+      "node/no-missing-require": 0
 		}
 	}]
 

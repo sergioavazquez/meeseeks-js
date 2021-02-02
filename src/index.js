@@ -5,3 +5,5 @@ export { to } from './utils/to';
 export { mPromise } from './utils/mPromise';
 export { debounce } from './utils/debounce';
 export { randomPickUnique } from './utils/randomPickUnique';
+export { retryAsyncRequest } from './utils/retryAsyncRequest';
+export { mAsyncRequestFactory } from './utils/mAsyncRequestFactory';

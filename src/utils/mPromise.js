@@ -4,9 +4,7 @@ function mPromise(time, response, fail = false) {
 
   if (typeof response !== 'function') {
     const ans = !response ? t : response;
-    res = () => {
-      return ans;
-    };
+    res = () => ans;
   } else {
     res = response;
   }
@@ -15,7 +13,7 @@ function mPromise(time, response, fail = false) {
       if (fail) {
         reject(res());
       }
-      resolve(res());
+      return resolve(res());
     }, t);
   });
 }

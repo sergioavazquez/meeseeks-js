@@ -1,3 +1,4 @@
+require("regenerator-runtime/runtime");
 const { mPromise } = require('./mPromise');
 
 describe('mPromise', ()=>{
@@ -39,6 +40,18 @@ describe('mPromise', ()=>{
     })
   });
 
+  test('Should return resolved promise function', () => {
+    return new Promise( async done => {
+      // test
+      const expected = 'function result';
+      const fun = ()=>{return expected};
+      let result = await mPromise(25, fun);
+      expect(result).toEqual(expected);
+      done();
+      // end test
+    })
+  });
+
   test('Should reject promise in 50ms.', () => {
     return new Promise( done => {
       // test
@@ -64,6 +77,23 @@ describe('mPromise', ()=>{
         expect(e).toEqual(expected);
         done();
       })
+      // end test
+    })
+  });
+
+  test('Should reject awaited promise with function', () => {
+    return new Promise( async done => {
+      // test
+      const expected = 'function failed result';
+      const fun = ()=>{return expected};
+      let result;
+      try{
+        result = await mPromise(20, fun, true);
+      }catch(e){
+        result = e;
+      }
+      expect(result).toEqual(expected);
+      done();
       // end test
     })
   });

@@ -5,7 +5,10 @@ module.exports = {
 			{
 				"useBuiltIns": "entry",
 				"modules": false,
-				"corejs": "3"
+        "corejs": "3",
+        "targets": {
+          "esmodules": true,
+        },
 			}
 		]
 	]
