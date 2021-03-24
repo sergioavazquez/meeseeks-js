@@ -110,6 +110,92 @@ const result = await chain(promises);
 expect(result).toEqual(expected);
 ```
 
+## retryAsyncRequest
+
+`retryAsyncRequest` is a method that encapsulates a retry logic for an asynchronous request. Time between retries is defined by a function with customizable parameters for now. In the future this will be updated in order to provide a custom function.
+
+
+This code will retry 3 times before throwing an error. `retryAyncRequest` internally captures the failing async request and only throws if the number of retries is exceeded.
+
+```
+  const options = { backoff: 200, backoffPower: 1.25 }; // Optional, default values.
+  try{
+    result = await retryAsyncRequest(fetchData, 3, options);
+  }catch(e){
+    result = e;
+  }
+```
+
+Timing function between retries is:
+
+`backoff * numberOfTries ** options.backoffPower`
+
+Timing defaults are:
+```
+backoff: 200, // [ms]
+backoffPower: 1.25
+```
+
+## mAsyncRequestFactory
+
+`mAsyncRequestFactory` stands for mock asynchronous request factory. It returns a function that returns promises upon execution. If `countdownToSuccess` is larger than 0 it will throw executing/returning `onFailure`. When `countdownToSuccess` reaches zero it will resolve promise successfully returning `onSuccess`.
+
+This method is useful for testing async retry methods and makes more sense with an example:
+
+```
+  const countdownToSuccess = 2; // 2 attempts will fail before success.
+  const onSuccess = 'onSuccess'; // Could be a function: ()=>'onSuccess'
+  const onFailure = 'onFailure'; // Could be a function: ()=>'onFailure'
+  let result = onSuccess;
+
+
+  // Create the factory:
+  const mockedAR = mAsyncRequestFactory(onSuccess, onFailure, countdownToSuccess);
+
+
+  // countdownToSuccess: 2
+  // First execution will throw and return 'onFailure'
+  try{
+    await mockedAR();
+  }catch(e){
+    result = e;
+  }
+  expect(result).toEqual(onFailure);
+
+
+  // countdownToSuccess: 1
+  // Second execution will throw and return 'onFailure'
+  try{
+    await mockedAR();
+  }catch(e){
+    result = e;
+  }
+  expect(result).toEqual(onFailure);
+
+
+  // countdownToSuccess: 0
+  // countdownToSuccess is now zero so execution will succeed and return 'onSuccess' instead of throwing.
+  try{
+    result = await mockedAR();
+  }catch(e){
+    result = e;
+  }
+  expect(result).toEqual(onSuccess);
+```
+
+`mAsyncRequestFactory(onSuccess, onFailure, countdownToSuccess, waitTime)`
+
+- `onSuccess` < number > | < string > | < function > is the value or function returned on success. (defaults to 'success response')
+
+- `onFailure` < number > | < string > | < function > is the value or function returned when promise is rejected. (defaults to 'error response')
+
+- `countdownToSuccess` < number > is the amount of promises to reject before succeeding. (defaults to 0)
+By default, since `countdownToSuccess` is zero it will resolve on first attempt. This would be equivalent to `mPromise(waitTime, onSuccess)` .
+
+- `waitTime` < number > Amount of [ms] to wait until resolving or rejecting each promise. (defaults to 200)
+
+
+
 ## debounce
 
 `debounce` allows us to __group__ multiple sequential calls in a single one.
@@ -214,6 +300,18 @@ Methods:
 Properties:
 
 - `wd.triggerCount` number of times triggerFcn has been triggered.
+
+
+## randomPickUnique
+
+`randomPickUnique` is a function that randomly picks `n` elements from an array.
+
+The function returns an array, even if it only picks one element, for consistency.
+
+`randomPickUnique(elements, n)`
+
+- `elements` Array < t >
+- `n` < integer > defaults to 1.
 
 
 ## Development

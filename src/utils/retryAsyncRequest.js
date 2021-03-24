@@ -11,7 +11,7 @@ const retryAsyncRequest = async (
     } catch (err) {
       if (attempt <= maxAttempts) {
         const nextAttempt = attempt + 1;
-        const delayInSeconds = Math.ceil(
+        const delayInSeconds = Math.round(
           (options.backoff * nextAttempt ** options.backoffPower) / 1000
         );
         console.warn(`Retrying after ${delayInSeconds} seconds due to:`, err);
