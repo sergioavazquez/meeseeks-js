@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const serverSide = (env, argv) => {
   // console.log('webpack production config: ', env, argv);
@@ -27,12 +28,6 @@ const serverSide = (env, argv) => {
           }
         },
         {
-          enforce: 'pre',
-          test: /\.js$/,
-          exclude: /node_modules/,
-          use: ['eslint-loader']
-        },
-        {
           test: /\.js$/,
           exclude: /node_modules/,
           use: {
@@ -45,7 +40,8 @@ const serverSide = (env, argv) => {
       new webpack.EnvironmentPlugin({
         NODE_ENV: 'production'
       }),
-      new CleanWebpackPlugin()
+      new CleanWebpackPlugin(),
+      new ESLintPlugin()
       // new CleanWebpackPlugin(['dist'], {
       //   root: path.resolve(__dirname, '..'),
       // })
